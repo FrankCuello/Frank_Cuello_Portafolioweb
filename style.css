@@ -1,0 +1,293 @@
+/* Estilos Generales */
+body {
+    font-family: 'Merriweather', serif; /* Fuente serif para el cuerpo del texto - Elegante y legible */
+    font-weight: 400; /* Peso de fuente normal */
+    line-height: 1.7; /* Interlineado mejorado para legibilidad */
+    margin: 0;
+    padding-top: 56px; /* Ajuste para el menú fixed */
+    color: #333; /* Color de texto por defecto */
+}
+
+.emoji {
+    font-size: 1.2em;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.8rem;
+    font-size: 2.2em; /* Título de sección un poco más grande */
+    margin-bottom: 2rem; /* Margen inferior más amplio para separar secciones */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #007bff; /* Color del subrayado */
+}
+
+h1, h2, h3, h4, h5, h6, .developer-name, .card-title {
+    font-family: 'Poppins', sans-serif; /* Fuente sans-serif para títulos - Moderna y limpia */
+    font-weight: 700; /* Títulos en negrita */
+    line-height: 1.3; /* Interlineado de títulos */
+    margin-bottom: 0.75rem; /* Margen inferior un poco menor para títulos */
+}
+
+.developer-description, .card-text, p, .nav-link, .btn {
+    font-size: 1rem; /* Tamaño de fuente base para texto y botones */
+    font-weight: 400;
+}
+
+
+/* Homepage */
+.homepage {
+    background: linear-gradient(45deg, #f0f2f5, #e9ecef); /* Degradado suave y neutro */
+    color: #333; /* Texto en homepage claro */
+}
+
+.developer-photo {
+    width: 150px;
+    border: 5px solid #fff;
+    margin-bottom: 1.5rem; /* Margen inferior foto desarrollador - reducido */
+    animation: fadeIn 1.5s ease-out forwards; /* Más rápido y suave */
+    opacity: 0; /* Inicialmente invisible para la animación */
+}
+
+.developer-name {
+    font-size: 2.5em;
+    margin-bottom: 0.5rem; /* Margen inferior nombre desarrollador - reducido */
+    animation: slideInDown 0.8s ease-out forwards 0.2s; /* Más rápido y con retraso */
+    opacity: 0;
+    transform: translateY(-30px); /* Inicio más sutil */
+}
+
+.developer-description {
+    font-size: 1.2em;
+    animation: fadeInUp 0.8s ease-out forwards 0.5s; /* Más rápido y con más retraso */
+    opacity: 0;
+    transform: translateY(15px); /* Inicio más sutil */
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Gradiente Animado - Más sutil y lento */
+.gradient-animation {
+    background: linear-gradient(45deg, #f0f2f5, #e9ecef); /* Degradado suave y neutro */
+    background-size: 300% 300%; /* Menos intenso */
+    animation: gradientAnimation 20s ease infinite; /* Más lento */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body.dark-mode .gradient-animation {
+    background: linear-gradient(45deg, #1e272e, #2c3a47); /* Degradado oscuro más profundo */
+    background-size: 300% 300%; /* Menos intenso */
+    animation: gradientAnimationDark 20s ease infinite; /* Más lento */
+}
+
+@keyframes gradientAnimationDark {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Sobre Mí, Proyectos, Experiencia, Contacto */
+.sobre-mi, .proyectos, .experiencia, .contacto {
+    padding-top: 4rem; /* Padding vertical secciones - ligeramente reducido */
+    padding-bottom: 4rem; /* Padding vertical secciones - ligeramente reducido */
+}
+
+
+/* Proyectos y Experiencia Cards - Latido más lento y sutil */
+.project-card, .experience-card {
+    border: 1px solid #dee2e6; /* Borde de tarjeta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    animation: heartBeat 4s linear infinite alternate; /* Más lento */
+}
+
+.project-card:hover, .experience-card:hover {
+    transform: scale(1.02); /* Menos escala al hacer hover en cards */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.18); /* Sombra más sutil al hacer hover en cards */
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.01); } /* Menos escala */
+    100% { transform: scale(1); }
+}
+
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición para scale */
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Color al hacer hover en iconos sociales claro */
+    transform: scale(1.1); /* Ligeramente más grande al hacer hover */
+}
+
+
+/* Modo Dark Styles */
+body.dark-mode {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #f8f9fa; /* Texto claro */
+}
+
+body.dark-mode .navbar.bg-light {
+    background-color: #343a40 !important; /* Navbar oscuro */
+}
+
+body.dark-mode .navbar-light .navbar-brand,
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: #f8f9fa; /* Texto del navbar claro */
+}
+body.dark-mode .navbar-light .navbar-nav .nav-link.active {
+    color: #00aaff; /* Color activo en modo oscuro */
+}
+
+
+body.dark-mode .homepage {
+    background: linear-gradient(45deg, #1e272e, #2c3a47); /* Degradado oscuro más profundo para homepage */
+    color: #fff;
+}
+
+body.dark-mode .section-title::after {
+    background-color: #00aaff; /* Subrayado en modo oscuro */
+}
+
+body.dark-mode .bg-light {
+    background-color: #2a2a2a !important; /* Fondo light en modo oscuro */
+    color: #f8f9fa;
+}
+
+body.dark-mode .card {
+    background-color: #333; /* Cards oscuras */
+    color: #f8f9fa;
+    border-color: #555; /* Borde de card oscuro */
+}
+body.dark-mode .card.project-card, body.dark-mode .card.experience-card {
+    border: 1px solid #555; /* Borde de tarjeta oscuro */
+}
+
+body.dark-mode .card-title {
+    color: #fff; /* Título de card claro */
+}
+
+body.dark-mode .card-subtitle {
+    color: #ccc; /* Subtítulo de card más claro */
+}
+
+body.dark-mode .footer {
+    background-color: #222; /* Footer más oscuro */
+}
+
+body.dark-mode .btn-primary {
+    background-color: #00aaff;
+    border-color: #00aaff;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #0088cc;
+    border-color: #0088cc;
+}
+body.dark-mode .btn-dark {
+    background-color: #f8f9fa;
+    color: #333;
+    border-color: #f8f9fa;
+}
+
+body.dark-mode .btn-dark:hover {
+    background-color: #e2e3e4;
+    border-color: #e2e3e4;
+    color: #333;
+}
+body.dark-mode .form-control {
+    background-color: #444;
+    color: #f8f9fa;
+    border-color: #555;
+}
+body.dark-mode .form-control:focus {
+    background-color: #444;
+    color: #f8f9fa;
+    border-color: #00aaff; /* Borde al enfocar en modo oscuro */
+    box-shadow: 0 0 0 0.2rem rgba(0, 170, 255, .25); /* Sombra al enfocar en modo oscuro */
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+    .developer-photo {
+        width: 120px;
+    }
+    .developer-name {
+        font-size: 2em;
+    }
+    .developer-description {
+        font-size: 1em;
+    }
+    .section-title {
+        font-size: 1.9em; /* Título de sección responsive */
+        margin-bottom: 1.8rem;
+    }
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    .mb-5 {
+        margin-bottom: 2.5rem !important;
+    }
+    .mb-4 {
+        margin-bottom: 2rem !important;
+    }
+    .mb-3 {
+        margin-bottom: 1rem !important;
+    }
+}
